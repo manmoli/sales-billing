@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BillingInfoModule } from './billing_info/billing_info.module';
+import { BillingInfo } from './billing_info/entities/billing_info.entity';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import { BillingInfoModule } from './billing_info/billing_info.module';
       username: 'root',
       password: 'root',
       database: 'workshop-admin',
-      entities: [],
+      entities: [BillingInfo],
       synchronize: true,
     }),
     BillingInfoModule,
